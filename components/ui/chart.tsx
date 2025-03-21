@@ -2,6 +2,13 @@
 
 import * as React from "react"
 import * as RechartsPrimitive from "recharts"
+export const ChartRadar = () => null
+export const ChartRadarLine = () => null
+export const ChartRadialBar = () => null
+export const Chart = ({ children, data }: { children: React.ReactNode; data: any[] }) => {
+  return <div>{children}</div>
+}
+
 
 import { cn } from "@/lib/utils"
 
