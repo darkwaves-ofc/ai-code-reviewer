@@ -12,8 +12,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { useToast } from "@/components/ui/use-toast"
 import { login } from "@/app/actions/auth"
+import { useToast } from "@/hooks/use-toast"
 
 export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false)
@@ -33,10 +33,10 @@ export default function LoginPage() {
       setError(result.error)
       setIsLoading(false)
 
-      if (result.error._form) {
+      if ((result.error as any)._form) {
         toast({
           title: "Login failed",
-          description: result.error._form[0],
+          description: (result.error as any)._form[0],
           variant: "destructive",
         })
       }

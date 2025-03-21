@@ -6,9 +6,9 @@ import { CreditCard, Loader2 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { useToast } from "@/components/ui/use-toast"
 import { SubscriptionStatus } from "@/components/subscription-status"
 import { getUserSubscriptionPlan } from "@/app/actions/stripe"
+import { useToast } from "@/hooks/use-toast"
 
 export default function BillingPage() {
   const [subscription, setSubscription] = useState<any>(null)

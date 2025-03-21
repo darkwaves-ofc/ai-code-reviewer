@@ -12,8 +12,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
-import { useToast } from "@/components/ui/use-toast"
 import { signup } from "@/app/actions/auth"
+import { useToast } from "@/hooks/use-toast"
 
 export default function SignupPage() {
   const [isLoading, setIsLoading] = useState(false)
@@ -32,10 +32,10 @@ export default function SignupPage() {
       setError(result.error)
       setIsLoading(false)
 
-      if (result.error._form) {
+      if ((result.error as any)._form) {
         toast({
           title: "Signup failed",
-          description: result.error._form[0],
+          description: (result.error as any)._form[0],
           variant: "destructive",
         })
       }

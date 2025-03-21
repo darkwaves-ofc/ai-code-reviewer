@@ -11,10 +11,10 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/components/ui/use-toast"
 import { CodeReviewResult } from "@/components/code-review-result"
 import { reviewCode, getRecentReviews } from "@/app/actions/code-review"
 import { getUserSubscriptionPlan } from "@/app/actions/stripe"
+import { useToast } from "@/hooks/use-toast"
 
 export default function Dashboard() {
   const [code, setCode] = useState("")
@@ -90,7 +90,7 @@ export default function Dashboard() {
       if (result.error) {
         toast({
           title: "Error",
-          description: result.error,
+          description: result.error as string,
           variant: "destructive",
         })
 

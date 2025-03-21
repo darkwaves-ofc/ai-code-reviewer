@@ -19,9 +19,9 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { useToast } from "@/components/ui/use-toast"
 import { getUserApiKeys, createApiKey, deleteApiKey } from "@/app/actions/api-keys"
 import { getUserSubscriptionPlan } from "@/app/actions/stripe"
+import { useToast } from "@/hooks/use-toast"
 
 export default function ApiKeysPage() {
   const [apiKeys, setApiKeys] = useState<any[]>([])

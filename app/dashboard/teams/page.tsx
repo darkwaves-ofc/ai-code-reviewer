@@ -19,9 +19,9 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { useToast } from "@/components/ui/use-toast"
 import { getUserTeams, createTeam } from "@/app/actions/team"
 import { getUserSubscriptionPlan } from "@/app/actions/stripe"
+import { useToast } from "@/hooks/use-toast"
 
 export default function TeamsPage() {
   const [teams, setTeams] = useState<any[]>([])
